@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    div(class='container')
+        div
+            h1 Add a New Business
+            form(method='post', enctype='multipart/form-data')
+                fieldset
+                    label(for='filename') Logo
+                    input(type='file' name='filename', required)		
+                fieldset
+                    label(for='company') Company
+                    input(name='company', required)
+                fieldset
+                    label(for='specialty') Specialty
+                    input(name='specialty', required)
+                fieldset
+                    label(for='description') Description
+                    textarea(name='description', required)
+                fieldset
+                    label(for='phonenumber') Phone Number
+                    input(name='phonenumber' type='number', required)
+
+                input(type='submit', value='Add Business')

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    div(class='container')
+        div
+            h2 Business List
+            table(class='table-bordered')
+                thead
+                    th Logo
+                    th Company
+                    th Specialty
+                    th Description
+                    th Phone Number
+                    th Edit
+                    th Delete
+                tbody
+                    each business, i in businesses
+                        tr
+                            td 
+                                img(src='/images/#{business.filename}', width='150')
+                            td #{business.company}
+                            td #{business.specialty}
+                            td #{business.description}
+                            td #{business.phonenumber}
+                            td 
+                                a(href='businesses/edit/#{business._id}' title='Edit') Edit
+                            td 
+                                a(href='businesses/delete/#{business._id}' title='Delete' onclick='return confirm(\'Are you sure you want to remove this business?\');') Delete

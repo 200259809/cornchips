@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div(class='container')
+        div
+            a(href='/businesses', title='List Businesses') List Businesses
+            h2 Edit a Business
+            form(method='post', action='businesses')
+                div
+                    div
+                        label Name
+                        input(name='company', required, placeholder='company', value='#{business.company}')
+                    div
+                        label Specialty
+                        input(name='specialty', required, placeholder='specialty', value='#{business.specialty}')
+                    div
+                        label Description
+                        textarea(name='description', required, placeholder='description') #{business.description}
+                    div
+                        label Phone Number
+                        input(name='phonenumber', required, placeholder='phonenumber', type='number', value='#{business.phonenumber}')
+                    input(type='hidden', name='id' value='#{business._id}')
+                    input(type='submit', value='Update Business')
